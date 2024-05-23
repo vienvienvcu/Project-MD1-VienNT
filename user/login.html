@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ==================LINK CSS======================== -->
+    <link rel="stylesheet" href="./user-css/login.css" />
+    <!-- ==================LINK BOX ICON======================== -->
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- ==================LINK SWIPER======================== -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <title>website about in the food</title>
+  </head>
+  <body>
+    <!-- =======LOGIN START===================== -->
+    <div class="login">
+      <div class="login-box">
+        <i class="bx bx-x" id="close"></i>
+      </div>
+      <div class="user-container">
+        <h2>login</h2>
+        <div class="form">
+          <form class="form-user">
+            <!-- <input type="text" name="name" placeholder="Your name"> -->
+            <div class="input-control">
+              <input
+                id="emailLogin"
+                type="email"
+                name="email"
+                placeholder="Your email"
+              />
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input
+                id="passwordLogin"
+                type="password"
+                name="password"
+                placeholder="password"
+              />
+              <!-- <i class="fa-solid fa-eye "></i> -->
+              <i class="fa-solid fa-eye-slash eye-icon"></i>
+              <div class="error"></div>
+            </div>
+            <div class="forgot-password">
+              <a href="#">Forgot-password?</a>
+            </div>
+            <div class="button-submit">
+              <button type="button" class="login-submit" id="btn-login">
+                login
+              </button>
+            </div>
+            <div class="text">
+              <span>Already have a account?</span>
+              <a href="#" id="sign-open">Click here</a>
+            </div>
+            <hr />
+            <div class="button-facebook">
+              <i class="bx bxl-facebook-circle"></i>
+              <span>Login with Facebook</span>
+            </div>
+            <div class="button-google">
+              <img src="./img/goole.png" />
+              <span>Login with Google </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- =======LOGIN END===================== -->
+
+    <!-- ==================LINK SWIPER======================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- ==================LINK JAVASCRIPT======================== -->
+    <script src="./user-js/login.js"></script>
+    <script src="./user-js/regester.js"></script>
+  </body>
+</html>
