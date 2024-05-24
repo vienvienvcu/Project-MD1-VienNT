@@ -271,3 +271,20 @@ function changePageSize(e) {
   currentPage = 1;
   render();
 }
+//sigs out admin
+
+document.getElementById("account-user").addEventListener("click", () => {
+  document.getElementById("sigout").classList.toggle("open");
+});
+
+document.getElementById("btn-logout").addEventListener("click", () => {
+  document.getElementById("sigout").classList.remove("open");
+  document.getElementById("sigout-complete").style.right = "0px";
+});
+
+function CloseSignOut() {
+  document.getElementById("sigout-complete").style.display = "none";
+  document.getElementById("account-user").style.display = "none";
+  document.getElementById("list-login").classList.add("open");
+  window.location.href = "/user/index.html";
+}

@@ -430,7 +430,7 @@ header .nav-toggler span{
     background-color: var(--green);
     color: var(--white);
 }
-.sidebar-title p{
+.sidebar-title a{
     text-transform: capitalize;
     color: var(--black);
     font-size: 18px;

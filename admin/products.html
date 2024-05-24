@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="admin-css/products.css" />
 
     <link rel="stylesheet" href="admin-css/login.css" />
-    
 
     <!-- ==================LINK BOX ICON======================== -->
     <link
@@ -47,104 +46,131 @@
           <ul class="list-icons">
             <li class="input">
               <input
-                id="input-search"
+                id="text-search"
                 type="text"
                 placeholder="search here..."
               />
-              <a href="#" id="search-icon"
+              <a href="#" id="search-icon" class="search-icon"
                 ><i class="bx bx-search-alt-2"></i
               ></a>
             </li>
-            <li>
+            <li id="list-login">
               <a href="#" id="user-icon"><i class="bx bx-user"></i></a>
             </li>
+            <li id="account-user">
+              <a href="#"><i class="bx bxs-user"></i></a>
+            </li>
+            <li id="name-login"></li>
           </ul>
         </div>
       </div>
+
+      <!--SIG OUT START-->
+
+      <div class="sigout" id="sigout">
+        <p>admin@gmail.com</p>
+        <h3>Hi,admin</h3>
+        <div class="sigout-btn">
+          <button class="" id="btn-logout">
+            <i class="bx bx-log-in-circle"></i>
+            <p>Sig out</p>
+          </button>
+        </div>
+      </div>
+
+      <div id="sigout-complete" class="user-complete">
+        <span>Are you sure want to sign out</span>
+        <div class="sigout-complete-btn">
+          <button class="btn" id="btn-yes" onclick="CloseSignOut()">yes</button>
+        </div>
+        <h3>Thanks you!</h3>
+      </div>
+
+      <!--SIG OUT END-->
     </header>
     <!-- =======HEADER END===================== -->
     <!-- =======SIDEBAR START===================== -->
-    <div class="container">
-      <section class="sidebar-admin" id="sidebar-admin">
-        <div class="sidebar">
-          <div class="sidebar-title">
-            <i class="bx bxs-dashboard"></i>
-            <p>dashboard</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bxs-edit"></i>
-            <p>products</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bxs-user-account"></i>
-            <p>customers</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bxs-bookmark-alt-minus"></i>
-            <p>orders</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bx-line-chart"></i>
-            <p>analytics</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bxs-chat"></i>
-            <p>messages</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bxs-cog"></i>
-            <p>setting</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bxs-report"></i>
-            <p>reports</p>
-          </div>
-          <div class="sidebar-title logout">
-            <i class="bx bx-log-in"></i>
-            <p>logout</p>
-          </div>
+
+    <section class="sidebar-admin" id="sidebar-admin">
+      <div class="sidebar">
+        <div class="sidebar-title">
+          <i class="bx bxs-dashboard"></i>
+          <a href="/admin/dashboard.html">dashboard</a>
         </div>
-      </section>
-      <!-- =======SIDEBAR END===================== -->
-      <!-- =======MAIN TABLE START===================== -->
-      <section class="main">
-        <div class="head-product">
-          <div class="button-add">
-            <button class="btn" id="add-products">add products</button>
-          </div>
-          <div class="select-product">
-            <select name="name" id="select-product">
-              <div class="option">
-                <option>all</option>
-                <option>pizza</option>
-                <option>spaghetti</option>
-                <option>filed chicken</option>
-                <option>drinks</option>
-              </div>
-            </select>
-          </div>
+        <div class="sidebar-title">
+          <i class="bx bxs-edit"></i>
+          <a href="/admin/user.html">user</a>
         </div>
-        <div class="table-product">
-          <div class="table">
-            <table>
-              <thead>
-                <tr>
-                  <th>id</th>
-                  <th>number</th>
-                  <th>name</th>
-                  <th>image</th>
-                  <th>size</th>
-                  <th>price</th>
-                  <th>quantity</th>
-                  <th>Description</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-             <tbody id="table-product">
+        <div class="sidebar-title">
+          <i class="bx bxs-user-account"></i>
+          <a href="/admin/category.html">category</a>
+        </div>
+        <div class="sidebar-title">
+          <i class="bx bxs-bookmark-alt-minus"></i>
+          <a href="/admin/products.html">product</a>
+        </div>
+        <div class="sidebar-title">
+          <i class="bx bx-line-chart"></i>
+          <a>customer</a>
+        </div>
+        <div class="sidebar-title">
+          <i class="bx bxs-chat"></i>
+          <a>messages</a>
+        </div>
+        <div class="sidebar-title">
+          <i class="bx bxs-cog"></i>
+          <a>setting</a>
+        </div>
+        <div class="sidebar-title">
+          <i class="bx bxs-report"></i>
+          <a>reports</a>
+        </div>
+        <div class="sidebar-title logout">
+          <i class="bx bx-log-in"></i>
+          <a>logout</a>
+        </div>
+      </div>
+    </section>
+    <!-- =======SIDEBAR END===================== -->
+    <!-- =======MAIN TABLE START===================== -->
+
+    <section class="main">
+      <div class="head-product">
+        <div class="button-add">
+          <button class="btn" id="add-products">add products</button>
+        </div>
+        <div class="select-product">
+          <select name="name" id="select-product">
+            <div class="option">
+              <option>all</option>
+              <option>pizza</option>
+              <option>spaghetti</option>
+              <option>filed chicken</option>
+              <option>drinks</option>
+            </div>
+          </select>
+        </div>
+      </div>
+      <div class="table-product">
+        <div class="table">
+          <table>
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>image</th>
+                <th>size</th>
+                <th>price</th>
+                <th>quantity</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="table-product">
               <!-- <tr>
                 <td>1</td>
-                <td>SP01</td>
                 <td>pizza</td>
                 <td><img scr="#"></td>
                 <td>l</td>
@@ -158,83 +184,118 @@
                   <button id="remove" class="btn">delete</button>
                 </td>
               </tr> -->
-             </tbody>
-            </table>
-          </div>
+            </tbody>
+          </table>
         </div>
-        <div class="page">
-          <div class="show-page">
-            <label for="category" class="label-page">Show page</label>
-            <select name="page">
-              <option value="All">All</option>
-              <option value="page1">5</option>
-              <option value="page2">10</option>
-              <option value="page3">15</option>
-            </select>
-          </div>
-          <div class="percent-page">
-            <button class="btn" id="percent-previous">Previous</button>
-            <p id="number-page">1</p>
-            <button class="btn" id="percent-next">Next</button>
-          </div>
-      </section>
-      <!-- =======MAIN TABLE END===================== -->
-    </div>
-    <!-- =======FORM PRODUCT START===================== -->
-    <section class="form-product">
-      <div id="close-form" class="close-box">
-        <i class="bx bx-x" id="close"></i>
       </div>
+      <div class="page">
+        <div class="show-page">
+          <label for="category" class="label-page">Show page</label>
+          <select name="page" onchange="changePageSize(event)">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+        </div>
+        <div class="percent-page">
+          <i
+            class="bx bxs-left-arrow"
+            id="percent-previous"
+            onclick="changePage(-1)"
+          ></i>
+          <p id="page-list">1</p>
+          <i
+            class="bx bxs-right-arrow"
+            id="percent-previous"
+            onclick="changePage(1)"
+          ></i>
+        </div>
+      </div>
+    </section>
+    <!-- =======MAIN TABLE END===================== -->
+
+    <!-- =======FORM PRODUCT START===================== -->
+    <section class="form-section" id="form-section">
+      <!-- hien loi -->
+      <div
+        id="toastify"
+        style="
+          width: 310px;
+          background-color: red;
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          padding: 10px;
+          overflow: hidden;
+          border-radius: 4px;
+          z-index: 999;
+        "
+        class="hidden"
+      >
+        <p id="toastify-message" style="text-align: justify; color: white"></p>
+      </div>
+
       <div class="form-product-item">
-        <form>
+        <form class="form-product" onsubmit="submitForm(event)">
           <h1 class="title">product</h1>
           <div class="input-item">
-            <label class="label-number" for="number">number</label>
-            <input type="text" value="" id="number" />
+            <input type="text" value="" id="number" hidden />
           </div>
           <div class="input-item">
             <label class="label-name">name</label>
-            <input type="text" value="" id="name" />
+            <input type="text" value="" id="name" name="name" />
           </div>
+
           <div class="input-item">
             <label class="label-image">image</label>
             <input
-            id="input-image"
-            type="file"
-            accept="image/*"
-          />
-          <img id="image-product" width="100px" src=""  />
+              id="input-image"
+              type="file"
+              accept="image/*"
+              onchange="convertToBase64()"
+            />
+            <img id="image-product" width="100px" src="" />
           </div>
+
           <div class="input-item">
             <label class="label-size">size</label>
-            <select id = "size" name="size">
-              <option value="m">M</option>
-              <option value="l">L</option>
+            <select id="size" name="size">
+              <option value="freeSize">freeSize</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
             </select>
           </div>
+          <div class="error-product" id="error-size"></div>
           <div class="input-item">
             <label class="label-price">price</label>
-            <input type="text" value="" />
+            <input id="price" type="number" value="" name="price" />
           </div>
+
           <div class="input-item">
             <label class="label-quantity">quantity</label>
             <input type="number" name="quantity" min="1" id="quantity" />
           </div>
+
           <div class="input-item">
             <label for="category" class="label-category">category</label>
             <select name="category" id="category">
-              <option value="Pizza">pizza</option>
+              <!-- <option value="Pizza">pizza</option>
+
               <option value="Spaghetti">Spaghetti</option>
               <option value="Filed chicken">Filed chicken</option>
-              <option value="Drinks">Drinks</option>
+              <option value="Drinks">Drinks</option> -->
             </select>
           </div>
+
           <div class="input-item">
             <label for="description" class="label-product">Description: </label>
             <textarea name="description" id="description" rows="4"></textarea>
           </div>
+          <div class="error-product" id="error-description"></div>
           <div class="product-button">
-            <button class="btn" type="button">Cancel</button>
+            <button class="btn" id="cancel-product" type="button">
+              Cancel
+            </button>
             <button class="btn" type="submit" id="submit-form">Add</button>
           </div>
         </form>
@@ -242,140 +303,7 @@
     </section>
     <!-- =======FORM END===================== -->
 
-    <!-- =======USER START===================== -->
-    <div id="user" class="user">
-      <div id="close-box" class="close-box">
-        <i class="bx bx-x" id="close"></i>
-      </div>
-      <div class="user-container">
-        <h2>sign up</h2>
-        <div class="form">
-          <form class="form-user" onsubmit="register(event)">
-            <div class="input-control">
-              <input
-                id="username"
-                type="text"
-                name="name"
-                placeholder="Your name"
-              />
-              <div id="error-name" class="error"></div>
-            </div>
-            <div class="input-control">
-              <input
-                id="email-user"
-                type="text"
-                name="email"
-                placeholder="Your email"
-              />
-              <div id="error-email" class="error"></div>
-              <div class="email-complete"></div>
-            </div>
-            <div class="input-control">
-              <input
-                id="password-user"
-                class="password"
-                type="password"
-                name="password"
-                placeholder="password"
-              />
-              <!-- <i class="fa-solid fa-eye-slash eye-icon"></i> -->
-              <div id="error-password" class="error"></div>
-            </div>
-            <div class="input-control">
-              <input
-                id="password-confirm"
-                class="password"
-                type="password"
-                name="confirmPassword"
-                placeholder="confirm password"
-              />
-              <div id="error-password-confirm" class="error"></div>
-              <i class="fa-solid fa-eye-slash eye-icon"></i>
-              <!-- <i class="fa-solid fa-eye eye-icon"></i> -->
-            </div>
-            <div class="button-submit">
-              <button type="submit" class="login-submit">login</button>
-            </div>
-            <div class="text">
-              <span>Already have a account?</span>
-              <a href="#" id="user-login">Login here</a>
-            </div>
-            <hr />
-            <div class="button-facebook">
-              <i class="bx bxl-facebook-circle"></i>
-              <span>Login with Facebook</span>
-            </div>
-            <div class="button-google">
-              <img src="./img/goole.png" />
-              <span>Login with Google </span>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div id="register-complete" class="user-complete">
-        <span>completed</span>
-        <img src="./img/check.png" />
-      </div>
-    </div>
-    <!-- =======USER END===================== -->
-    <!-- =======LOGIN START===================== -->
-    <div class="login">
-      <div class="login-box">
-        <i class="bx bx-x" id="close"></i>
-      </div>
-      <div class="user-container">
-        <h2>login</h2>
-        <div class="form">
-          <form class="form-user" onsubmit="register(event)">
-            <!-- <input type="text" name="name" placeholder="Your name"> -->
-            <div class="input-control">
-              <input
-                class="email"
-                type="email"
-                name="email"
-                placeholder="Your email"
-              />
-              <div class="error"></div>
-            </div>
-            <div class="input-control">
-              <input
-                class="password"
-                type="password"
-                name="password"
-                placeholder="password"
-              />
-              <!-- <i class="fa-solid fa-eye "></i> -->
-              <i class="fa-solid fa-eye-slash eye-icon"></i>
-              <div class="error"></div>
-            </div>
-            <div class="forgot-password">
-              <a href="#">Forgot-password?</a>
-            </div>
-            <div class="button-submit">
-              <button type="" class="login-submit">login</button>
-            </div>
-            <div class="text">
-              <span>Already have a account?</span>
-              <a href="#" id="sign-open">Click here</a>
-            </div>
-            <hr />
-            <div class="button-facebook">
-              <i class="bx bxl-facebook-circle"></i>
-              <span>Login with Facebook</span>
-            </div>
-            <div class="button-google">
-              <img src="./img/goole.png" />
-              <span>Login with Google </span>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- =======LOGIN END===================== -->
     <!-- ==================LINK JAVASCRIPT======================== -->
     <script src="./admin-js/products.js"></script>
-    <script src="./admin-js/category.js"></script>
-    <script src="./admin-js/login.js"></script>
-   
   </body>
 </html>

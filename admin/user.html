@@ -61,9 +61,9 @@
             <li id="name-login"></li>
           </ul>
         </div>
-         </ul>
-        </div>
       </div>
+      <!--SIG OUT START-->
+
       <div class="sigout" id="sigout">
         <p>admin@gmail.com</p>
         <h3>Hi,admin</h3>
@@ -74,7 +74,7 @@
           </button>
         </div>
       </div>
-     
+
       <div id="sigout-complete" class="user-complete">
         <span>Are you sure want to sign out</span>
         <div class="sigout-complete-btn">
@@ -83,57 +83,56 @@
         <h3>Thanks you!</h3>
       </div>
 
-       <!--SIG OUT END-->
+      <!--SIG OUT END-->
     </header>
     <!-- =======HEADER END===================== -->
     <!-- =======SIDEBAR START===================== -->
-    <div class="container">
-      <section class="sidebar-admin" id="sidebar-admin">
-        <div class="sidebar">
-          <div class="sidebar-title">
-            <i class="bx bxs-dashboard"></i>
-            <p>dashboard</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bxs-edit"></i>
-            <p>products</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bxs-user-account"></i>
-            <p>customers</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bxs-bookmark-alt-minus"></i>
-            <p>orders</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bx-line-chart"></i>
-            <p>analytics</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bxs-chat"></i>
-            <p>messages</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bxs-cog"></i>
-            <p>setting</p>
-          </div>
-          <div class="sidebar-title">
-            <i class="bx bxs-report"></i>
-            <p>reports</p>
-          </div>
-          <div class="sidebar-title logout">
-            <i class="bx bx-log-in"></i>
-            <p>logout</p>
-          </div>
+    <section class="sidebar-admin" id="sidebar-admin">
+      <div class="sidebar">
+        <div class="sidebar-title">
+          <i class="bx bxs-dashboard"></i>
+          <a href="/admin/category.html">dashboard</a>
         </div>
-      </section>
+        <div class="sidebar-title">
+          <i class="bx bxs-edit"></i>
+          <a href="/admin/user.html">user</a>
+        </div>
+        <div class="sidebar-title">
+          <i class="bx bxs-user-account"></i>
+          <a href="/admin/category.html">category</a>
+        </div>
+        <div class="sidebar-title">
+          <i class="bx bxs-bookmark-alt-minus"></i>
+          <a href="./products.html">product</a>
+        </div>
+        <div class="sidebar-title">
+          <i class="bx bx-line-chart"></i>
+          <a>customer</a>
+        </div>
+        <div class="sidebar-title">
+          <i class="bx bxs-chat"></i>
+          <a>messages</a>
+        </div>
+        <div class="sidebar-title">
+          <i class="bx bxs-cog"></i>
+          <a>setting</a>
+        </div>
+        <div class="sidebar-title">
+          <i class="bx bxs-report"></i>
+          <a>reports</a>
+        </div>
+        <div class="sidebar-title logout">
+          <i class="bx bx-log-in"></i>
+          <a>logout</a>
+        </div>
+      </div>
+    </section>
       <!-- =======SIDEBAR END===================== -->
       <!-- =======MAIN TABLE START===================== -->
       <section class="main">
         <div class="head-product">
           <h2>user</h2>
-          <select id="select-user" onchange ="sortName(event)">
+          <select id="select-user" onchange="sortName(event)">
             <option value="All">All</option>
             <option value="x">A-Z</option>
             <option value="y">Z-A</option>
@@ -191,7 +190,7 @@
       </section>
       <!-- =======MAIN TABLE END===================== -->
     </div>
-  
+
     <!-- ==================LINK JAVASCRIPT======================== -->
 
     <script src="./admin-js/user.js"></script>

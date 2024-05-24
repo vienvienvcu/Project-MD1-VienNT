@@ -78,7 +78,7 @@ a{
 } 
 .btn:hover{
     background-color: var(--green);
-    letter-spacing: 1.5px;  
+    /* letter-spacing: 1.5px;   */
 }
 /* =========== HEADER STAR================ */
 header{
@@ -233,24 +233,158 @@ header .nav-toggler span{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 2px;
 }
-#input-search{
+#text-search{
    border: none;
    padding: 16px 160px;
-   margin-right: 16px;
    border-radius: 40px;
    background-color: #eee;
    border: 1px solid var(--green-alpha-25);
    transition: all .3s ease;
-   display: none;
+   display: flex;
 }
-#input-search.active{
-    display: flex;
+#text-search.active{
+    display: block;
 }
-#input-search::placeholder{
+#text-search::placeholder{
     font-size: 18px;
     opacity: 0.5;
+}
+
+#search-icon{
+    display: flex;
+}
+
+#name-login span{
+    display: block;
+    height: 10px;
+    width: 10px;
+    line-height: 10px;
+    border-radius: 50%;
+    background-color: var(--green);
+    position: absolute;
+    top: 15px;
+    right:115px;
+}
+#list-login{
+    display: none;
+    transition: all .5s ease;
+}
+#account-user{
+    display: block;
+    transition: all .5s ease;
+}
+#list-login.open{
+    display: block;
+}
+#account-user a i{
+    color: var(--white);
+    border: 1px solid var(--black);
+    background-color: #141E46;
+}
+
+/* ---------sig out start--------- */
+.sigout {
+    width: 400px;
+    height: 240px;
+    position: absolute;
+    top: 100px;
+    right: -100%;
+    background-color: var(--white);
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--green);
+    border-radius: 10px;
+    text-align: center;
+    transition: right .5 ease;  
+}
+.sigout.open {
+    right: 0;
+}
+.sigout p {
+    font-size: 18px;
+}
+.sigout h3 {
+    margin-top: 20px;
+    font-size: 20px;
+    color: var(--green);
+}
+.sigout-btn {
+    margin-top: 40px;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    gap: 30px;
+}
+.sigout-btn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    font-size: 20px;
+    background-color: #141E46;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8px 18px;
+    color: #fff;
+    transition: all .3 ease;
+}
+
+.sigout-btn button:hover {
+    background-color: var(--green);
+}
+/* ---------sig out end--------- */
+
+/* ------user complete-------- */
+#register-complete,
+#sigout-complete{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    text-align: center;
+    width: 300px;
+    height: 150px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    transition: right .5s ease;
+    position: absolute;
+    gap: 10px;
+    top: 100px;
+    right:-100%;
+    z-index: 200;
+}
+.sigout-complete-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.sigout-complete-btn button{
+    border: none;
+    font-size: 14px;
+}
+.user-complete span{
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-top: 16px;
+}
+.user-complete img{
+    width: 22%;
+    font-size: 40px;
+    font-weight: bolder;
+    color: var(--green);
+    position: absolute;
+    top: -30px;
+    left: 116px;
+}
+.user-complete h3{
+    color: var(--green);
 }
 /* <!-- =======SIDEBAR START===================== --> */
 .sidebar-admin{
@@ -258,7 +392,7 @@ header .nav-toggler span{
     left: -100%;
     width: 360px;
     height: 100vh;
-    padding: 16px 20px;
+    padding: 40px 20px;
     box-shadow: var(--box-shadow);
     transform: all 0.4s ease; 
     position: fixed;
@@ -306,11 +440,12 @@ header .nav-toggler span{
     background-color: var(--green);
     color: var(--white);
 }
-.sidebar-title p{
+.sidebar-title a{
     text-transform: capitalize;
     color: var(--black);
     font-size: 18px;
     line-height: 1.5px;
+    font-weight: bolder;
 }
 .sidebar-title.logout{
     margin-top: 100px;
@@ -319,7 +454,7 @@ header .nav-toggler span{
 /* <!-- =======MAIN START===================== --> */
 .main{
     width: 100%;
-    padding: 20px 30px;
+    padding: 90px 30px;
     transform: all 0.6s ease;  
    
 }
@@ -366,7 +501,8 @@ table, td, th {
    
     /*=============FORM PRODUCT==================  */
   }
-.form-product{
+.form-section,
+#form-section{
     position: fixed;
     top:-100%;
     left: 0;
@@ -382,7 +518,10 @@ table, td, th {
     justify-content: center;
     align-items: center;
 }
-.form-product.active{
+#form-section.active{
+    top: 0; 
+}
+.form-section.active{
     top: 0; 
 }
 .form-product-item{
@@ -466,57 +605,7 @@ form {
     margin-left: 10px;
     font-size: 18px;
  }
- .page{
-    padding: 50px 20px;
-    display: flex;
-    justify-content: space-between;
- }
- .show-page .label-page{
-  font-size: 20px;
-  color: var(--green);
-  font-weight: 600;
- }
- .show-page select{
-    border: none;
-    padding: 8px 30px;
-    font-size: 18px;
-    text-transform: capitalize;
-    background-color: var(--white);
-    border-radius: 6px;
-    border: 1px solid var(--green-alpha-50);
-    cursor: pointer;
-    color: var(--black);
-    transition: all .3 ease;
-    margin-left: 20px;
- }
- .percent-page{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
- }
- .percent-page button{
-     border: none;
-     padding: 8px 18px;
-     font-size: 18px;
- }
- .percent-page p{
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    background: #fff;
-    text-align: center;
-    border-radius: 100%;
-    border: 1px solid var(--green-alpha-50);
-    cursor: pointer;
-    color: #141E46;
-    font-weight: 500;
-    font-size: 18px;
- }
- .percent-page p:hover{
-    background: var(--green);
-    color: #fff;
- }
+
 .table {
  background-color: var(--white);
  border-radius: 40px;
@@ -556,5 +645,86 @@ td img {
 }
 
  
+.hidden {
+    display: none !important;
+}
 
+.page{
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-around;
 
+ }
+ .show-page .label-page{
+  font-size: 20px;
+  color: var(--green);
+  font-weight: 600;
+ }
+ .show-page select{
+    border: none;
+    padding: 8px 30px;
+    font-size: 18px;
+    text-transform: capitalize;
+    background-color: var(--white);
+    border-radius: 6px;
+    border: 1px solid var(--green-alpha-50);
+    cursor: pointer;
+    color: var(--black);
+    transition: all .3 ease;
+    margin-left: 20px;
+ }
+ .percent-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+ }
+ .percent-page button{
+     border: none;
+     padding: 8px 18px;
+     font-size: 18px;
+ }
+
+ /*   show trang trong js span start*/
+ 
+ .page-item {
+    display: inline-block;
+    margin: 0 4px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid var(--green-alpha-50);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.page-item.page-active {
+    background-color: var(--green);
+}
+
+.page-item:hover {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+/*   show trang trong js span end */
+.percent-page i {
+    font-size: 30px;
+    color: var(--green);
+    cursor: pointer;
+}
+.percent-page i:hover{
+    color: var(--black);
+}
+ .percent-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+ }
+ .percent-page button{
+     border: none;
+     padding: 8px 18px;
+     font-size: 18px;
+ }

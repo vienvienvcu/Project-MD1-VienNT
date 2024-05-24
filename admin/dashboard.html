@@ -66,39 +66,39 @@
       <div class="sidebar">
         <div class="sidebar-title">
           <i class="bx bxs-dashboard"></i>
-          <p>dashboard</p>
+          <a>dashboard</a>
         </div>
         <div class="sidebar-title">
           <i class="bx bxs-edit"></i>
-          <p>products</p>
+          <a>user</a>
         </div>
         <div class="sidebar-title">
           <i class="bx bxs-user-account"></i>
-          <p>customers</p>
+          <a>category</a>
         </div>
         <div class="sidebar-title">
           <i class="bx bxs-bookmark-alt-minus"></i>
-          <p>orders</p>
+          <a>product</a>
         </div>
         <div class="sidebar-title">
           <i class="bx bx-line-chart"></i>
-          <p>analytics</p>
+          <a>customer</a>
         </div>
         <div class="sidebar-title">
           <i class="bx bxs-chat"></i>
-          <p>messages</p>
+          <a>messages</a>
         </div>
         <div class="sidebar-title">
           <i class="bx bxs-cog"></i>
-          <p>setting</p>
+          <a>setting</a>
         </div>
         <div class="sidebar-title">
           <i class="bx bxs-report"></i>
-          <p>reports</p>
+          <a>reports</a>
         </div>
         <div class="sidebar-title logout">
           <i class="bx bx-log-in"></i>
-          <p>logout</p>
+          <a>logout</a>
         </div>
       </div>
     </section>
@@ -186,138 +186,7 @@
       </div>
       <div class="read-more">read more</div>
     </section>
-    <!-- =======MAIN END===================== -->
 
-    <!-- =======USER START===================== -->
-    <div id="user" class="user">
-      <div id="close-box" class="close-box">
-        <i class="bx bx-x" id="close"></i>
-      </div>
-      <div class="user-container">
-        <h2>sign up</h2>
-        <div class="form">
-          <form class="form-user" onsubmit="register(event)">
-            <div class="input-control">
-              <input
-                id="username"
-                type="text"
-                name="name"
-                placeholder="Your name"
-              />
-              <div id="error-name" class="error"></div>
-            </div>
-            <div class="input-control">
-              <input
-                id="email-user"
-                type="text"
-                name="email"
-                placeholder="Your email"
-              />
-              <div id="error-email" class="error"></div>
-              <div class="email-complete"></div>
-            </div>
-            <div class="input-control">
-              <input
-                id="password-user"
-                class="password"
-                type="password"
-                name="password"
-                placeholder="password"
-              />
-              <!-- <i class="fa-solid fa-eye-slash eye-icon"></i> -->
-              <div id="error-password" class="error"></div>
-            </div>
-            <div class="input-control">
-              <input
-                id="password-confirm"
-                class="password"
-                type="password"
-                name="confirmPassword"
-                placeholder="confirm password"
-              />
-              <div id="error-password-confirm" class="error"></div>
-              <i class="fa-solid fa-eye-slash eye-icon"></i>
-              <!-- <i class="fa-solid fa-eye eye-icon"></i> -->
-            </div>
-            <div class="button-submit">
-              <button type="submit" class="login-submit">login</button>
-            </div>
-            <div class="text">
-              <span>Already have a account?</span>
-              <a href="#" id="user-login">Login here</a>
-            </div>
-            <hr />
-            <div class="button-facebook">
-              <i class="bx bxl-facebook-circle"></i>
-              <span>Login with Facebook</span>
-            </div>
-            <div class="button-google">
-              <img src="./img/goole.png" />
-              <span>Login with Google </span>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div id="register-complete" class="user-complete">
-        <span>completed</span>
-        <img src="./img/check.png" />
-      </div>
-    </div>
-    <!-- =======USER END===================== -->
-    <!-- =======LOGIN START===================== -->
-    <div class="login">
-      <div class="login-box">
-        <i class="bx bx-x" id="close"></i>
-      </div>
-      <div class="user-container">
-        <h2>login</h2>
-        <div class="form">
-          <form class="form-user" onsubmit="register(event)">
-            <!-- <input type="text" name="name" placeholder="Your name"> -->
-            <div class="input-control">
-              <input
-                class="email"
-                type="email"
-                name="email"
-                placeholder="Your email"
-              />
-              <div class="error"></div>
-            </div>
-            <div class="input-control">
-              <input
-                class="password"
-                type="password"
-                name="password"
-                placeholder="password"
-              />
-              <!-- <i class="fa-solid fa-eye "></i> -->
-              <i class="fa-solid fa-eye-slash eye-icon"></i>
-              <div class="error"></div>
-            </div>
-            <div class="forgot-password">
-              <a href="#">Forgot-password?</a>
-            </div>
-            <div class="button-submit">
-              <button type="" class="login-submit">login</button>
-            </div>
-            <div class="text">
-              <span>Already have a account?</span>
-              <a href="#" id="sign-open">Click here</a>
-            </div>
-            <hr />
-            <div class="button-facebook">
-              <i class="bx bxl-facebook-circle"></i>
-              <span>Login with Facebook</span>
-            </div>
-            <div class="button-google">
-              <img src="./img/goole.png" />
-              <span>Login with Google </span>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- =======LOGIN END===================== -->
     <!-- ==================LINK JAVASCRIPT======================== -->
     <script src="admin-js/dashboard.js"></script>
     <script src="admin-js/login.js"></script>

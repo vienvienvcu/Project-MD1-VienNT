@@ -789,12 +789,12 @@ hr{
 .container-chicken{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 26px;
+    gap: 20px;
     margin-top: 30px;
 }
 .chicken-item{
     position: relative;
-    width: 380px;
+    width: 400px;
     height: 420px;
     background-color: var(--white);
     padding: 20px;
@@ -807,8 +807,8 @@ hr{
     border: 1px solid var(--green);
 }
 .img-chicken{
-    width: 340px;
-    height: 220px;
+    width: 360px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -817,6 +817,7 @@ hr{
     height: auto;
     display: block;
     transition: all .5s ease;
+    object-fit: cover;
 }
 .img-chicken img:hover{
     transform: scale(1.1);

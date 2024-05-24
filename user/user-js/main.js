@@ -72,3 +72,55 @@ var swiper = new Swiper(".food-slider", {
     },
   },
 });
+
+function renderMenuCategory() {
+  const categorys = JSON.parse(localStorage.getItem("categorys")) || [];
+  const products = JSON.parse(localStorage.getItem("products")) || [];
+
+  stringCategorySection = "";
+  for (let i = 0; i < categorys.length; i++) {
+    const productsOfCategory = products.filter(
+      (name) => name.category === categorys[i].name
+    );
+
+    let stringProducts = "";
+    for (let j = 0; j < productsOfCategory.length; j++) {
+      stringProducts += `
+        <div class="chicken-items">
+          <div class="chicken-item">
+            <div class="img-chicken">
+              <img src="${productsOfCategory[j].image}" />
+            </div>
+            <div class="icon-heart">
+              <i class="bx bxs-heart"></i>
+            </div>
+            <div class="chicken-dish-name">
+              <h3>${productsOfCategory[j].name}</h3>
+            </div>
+            <div class="chicken-text">
+              <p>
+              ${productsOfCategory[j].description} 
+              </p>
+            </div>
+            <button class="view-card btn">Add To Card</button>
+            <span class="price-chicken">${productsOfCategory[j].price} VND </span>
+          </div>
+        </div> 
+      `;
+    }
+
+    stringCategorySection += `
+    <section class="chicken-menu">
+      <h1>${categorys[i].name}</h1>
+
+      <div class="container-chicken" id="container-chicken">
+        
+        ${stringProducts}
+
+      </div>
+    </section>
+    `;
+    document.getElementById("menu-category").innerHTML = stringCategorySection;
+  }
+}
+renderMenuCategory();
