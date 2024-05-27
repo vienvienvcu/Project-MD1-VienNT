@@ -72,55 +72,37 @@ var swiper = new Swiper(".food-slider", {
     },
   },
 });
+// show slides
 
-function renderMenuCategory() {
-  const categorys = JSON.parse(localStorage.getItem("categorys")) || [];
+function renderSlider() {
   const products = JSON.parse(localStorage.getItem("products")) || [];
-
-  stringCategorySection = "";
-  for (let i = 0; i < categorys.length; i++) {
-    const productsOfCategory = products.filter(
-      (name) => name.category === categorys[i].name
-    );
-
-    let stringProducts = "";
-    for (let j = 0; j < productsOfCategory.length; j++) {
-      stringProducts += `
-        <div class="chicken-items">
-          <div class="chicken-item">
-            <div class="img-chicken">
-              <img src="${productsOfCategory[j].image}" />
-            </div>
-            <div class="icon-heart">
-              <i class="bx bxs-heart"></i>
-            </div>
-            <div class="chicken-dish-name">
-              <h3>${productsOfCategory[j].name}</h3>
-            </div>
-            <div class="chicken-text">
-              <p>
-              ${productsOfCategory[j].description} 
-              </p>
-            </div>
-            <button class="view-card btn">Add To Card</button>
-            <span class="price-chicken">${productsOfCategory[j].price} VND </span>
-          </div>
-        </div> 
-      `;
-    }
-
-    stringCategorySection += `
-    <section class="chicken-menu">
-      <h1>${categorys[i].name}</h1>
-
-      <div class="container-chicken" id="container-chicken">
-        
-        ${stringProducts}
-
+  let stringSlide = ``;
+  for (let i = 0; i < products.length; i++) {
+    stringSlide += `
+    <div class="swiper-slide food-item">
+    <div class="food-content" id="food-content">
+      <a href="#" class="heart"><i class="bx bxs-heart"></i></a>
+      <div class="food-img">
+        <img src="${products[i].image}" draggable="false" />
       </div>
-    </section>
+      <div class="food-text">
+        <h3>${products[i].name}</h3>
+        <div class="star">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+        </div>
+        <div class="food-price">
+          <a href="#" class="btn">order now</a>
+          <span>${products[i].price}</span>
+        </div>
+      </div>
+    </div>
+  </div>
     `;
-    document.getElementById("menu-category").innerHTML = stringCategorySection;
   }
+  document.getElementById("slide-item").innerHTML = stringSlide;
 }
-renderMenuCategory();
+renderSlider();

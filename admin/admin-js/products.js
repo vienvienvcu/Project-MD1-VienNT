@@ -36,7 +36,7 @@ const btnSubmit = document.getElementById("submit-form");
 const searchIcon = document.getElementById("search-icon");
 const searchOpen = document.getElementById("#text-search");
 
-let pageSize = 5;
+let pageSize = 8;
 let totalPage = 1;
 let currentPage = 1;
 
@@ -66,6 +66,7 @@ function submitForm(e) {
     }
     values.price = +values.price;
     values.quantity = +values.quantity;
+
     //add convertToBase64 vào image imageBase64
     values.image = imageBase64;
 
@@ -95,18 +96,14 @@ function submitForm(e) {
       (index) => index.id == productId.value
     );
     products[indexUpdate].name = productName.value;
-    products[indexUpdate].id = productId.value;
     products[indexUpdate].image = productImage.src;
     products[indexUpdate].image = img.src;
     products[indexUpdate].quantity = productQuantity.value;
     products[indexUpdate].category = category.value;
     products[indexUpdate].description = productDescription.value;
     products[indexUpdate].size = productSize.value;
-
-    productPrice.value = products[indexUpdate].price = localStorage.setItem(
-      "products",
-      JSON.stringify(products)
-    );
+    products[indexUpdate].price = productPrice.value;
+    localStorage.setItem("products", JSON.stringify(products));
     action = "add";
     btnSubmit.innerText = "Add";
     img.src = "";
@@ -233,6 +230,7 @@ function changeStatus(id) {
 //xem số page của trang quá page == 5
 function renderPaginations(products) {
   totalPage = Math.ceil(products.length / pageSize); //làm trên lên
+  console.log(totalPage);
   let stringHTML = "";
   for (let i = 1; i <= totalPage; i++) {
     if (currentPage === i) {
@@ -334,7 +332,7 @@ function renderCategorys() {
     console.log(categorysData[i].status);
     if (categorysData[i].status == true) {
       stringCategorys += `
-      <option value="${categorysData[i].name}">${categorysData[i].name}</option>
+      <option value="${categorysData[i].id}">${categorysData[i].name}</option>
       `;
     }
   }
@@ -344,22 +342,20 @@ renderCategorys();
 //====== before update the data to the form =====
 
 function initUpdate(id) {
-  console.log("hjhj");
-
   let products = JSON.parse(localStorage.getItem("products"));
 
-  let indexId = products.findIndex((item) => item.id === id);
-  console.log(indexId);
+  let index = products.findIndex((item) => item.id === id);
+  console.log(index);
 
-  productName.value = products[indexId].name;
-  productId.value = products[indexId].id;
-  productImage.src = products[indexId].image;
-  img.src = products[indexId].image;
-  productQuantity.value = products[indexId].quantity;
-  category.value = products[indexId].category;
-  productDescription.value = products[indexId].description;
-  productSize.value = products[indexId].size;
-  productPrice.value = products[indexId].price;
+  productId.value = id;
+  productName.value = products[index].name;
+  productImage.src = products[index].image;
+  img.src = products[index].image;
+  productQuantity.value = products[index].quantity;
+  category.value = products[index].category;
+  productDescription.value = products[index].description;
+  productSize.value = products[index].size;
+  productPrice.value = products[index].price;
 
   action = "update";
   btnSubmit.innerText = "Update";
@@ -372,7 +368,6 @@ function productsDelete(id) {
   const products = JSON.parse(localStorage.getItem("products"));
   console.log(products);
   let indexId = products.findIndex((item) => item.id === id);
-  console.log(indexId);
   products.splice(indexId, 1);
   localStorage.setItem("products", JSON.stringify(products));
   render();

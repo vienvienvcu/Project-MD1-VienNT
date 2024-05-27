@@ -10,7 +10,7 @@
     />
     <!-- ==================LINK CSS======================== -->
     <link rel="stylesheet" href="./user-css/menus.css" />
-    <link rel="stylesheet" href="./user-css/style.css" />
+    <!-- <link rel="stylesheet" href="./user-css/style.css" /> -->
 
     <!-- ==================LINK BOX ICON======================== -->
     <link
@@ -43,36 +43,7 @@
           <!-- <a href="#home">dishes<i class='bx bxs-chevron-down'></i></a> -->
           <li><a href="./about.html">about</a></li>
           <li class="menus">
-            <a href="menus.html">menus<i class="bx bxs-chevron-down"></i></a>
-            <div class="menus-down" id="subMenus">
-              <div class="menus-text">
-                <div class="menus-all"><span>menus</span></div>
-                <img src="./img/menu.png" />
-              </div>
-              <div class="line"></div>
-              <div class="menus-down-box">
-                <a href="#">
-                  <img src="./img/fried-chicken.png" alt="chick-icon" />
-                  <p>fried chicken</p>
-                </a>
-                <a href="#">
-                  <img src="./img/pizza.png" />
-                  <p>pizza</p>
-                </a>
-                <a href="#">
-                  <img src="./img/spaghetti.png" />
-                  <p>spaghetti</p>
-                </a>
-                <a href="#">
-                  <img src="./img/milkshake.png" />
-                  <p>beverage</p>
-                </a>
-                <a href="#">
-                  <img src="./img/boy-girl.png" />
-                  <p>for babies</p>
-                </a>
-              </div>
-            </div>
+            <a href="menus.html">menus</a>
           </li>
           <li><a href="#home">review</a></li>
           <!-- <a href="#home">order</a> -->
@@ -88,16 +59,38 @@
             <a href="#"><i class="bx bxs-heart"></i></a>
           </li>
           <li>
-            <a href="#"><i class="bx bx-cart-alt"></i></a>
+            <a href="#" id="cart-icon"><i class="bx bx-cart-alt"></i></a>
+            <span id="quantity-cart"></span>
           </li>
-          <li>
+
+          <li id="list-login">
             <a href="#" id="user-icon"><i class="bx bx-user"></i></a>
           </li>
+          <li id="account-user">
+            <a href="#"><i class="bx bxs-user"></i></a>
+          </li>
+          <li id="name-login"></li>
         </ul>
       </div>
       <div class="nav-toggler">
         <span></span>
       </div>
+      <!-- --SIG OUT START -->
+      <div class="sigout" id="sigout">
+        <!-- <p>nguyenvien66@gmail.com</p>
+        <h3>Hi,you</h3>
+        <div class="sigout-btn">
+          <button class="" id="btn-add">
+            <i class="bx bxs-plus-circle"></i>
+            <p>Add account</p>
+          </button>
+          <button class="" id="btn-logout">
+            <i class="bx bx-log-in-circle"></i>
+            <p>Sig out</p>
+          </button>
+        </div> -->
+      </div>
+      <!--SIG OUT END-->
     </header>
     <!-- =======HEADER END===================== -->
     <!-- =======SEARCH START===================== -->
@@ -123,9 +116,9 @@
           <form class="form-user" onsubmit="register(event)">
             <div class="input-control">
               <input
-                id="username"
+                id="name"
                 type="text"
-                name="name"
+                name="username"
                 placeholder="Your name"
               />
               <div id="error-name" class="error"></div>
@@ -138,7 +131,7 @@
                 placeholder="Your email"
               />
               <div id="error-email" class="error"></div>
-              <div class="email-complete"></div>
+              <!-- <div class="email-complete"></div> -->
             </div>
             <div class="input-control">
               <input
@@ -183,8 +176,9 @@
         </div>
       </div>
       <div id="register-complete" class="user-complete">
-        <span>completed</span>
         <img src="./img/check.png" />
+        <span>Your work has been saved</span>
+        <h3>Thanks you!</h3>
       </div>
     </div>
     <!-- =======USER END===================== -->
@@ -196,11 +190,11 @@
       <div class="user-container">
         <h2>login</h2>
         <div class="form">
-          <form class="form-user" onsubmit="register(event)">
+          <form class="form-user">
             <!-- <input type="text" name="name" placeholder="Your name"> -->
             <div class="input-control">
               <input
-                class="email"
+                id="emailLogin"
                 type="email"
                 name="email"
                 placeholder="Your email"
@@ -210,6 +204,7 @@
             <div class="input-control">
               <input
                 class="password"
+                id="passwordLogin"
                 type="password"
                 name="password"
                 placeholder="password"
@@ -222,7 +217,9 @@
               <a href="#">Forgot-password?</a>
             </div>
             <div class="button-submit">
-              <button type="" class="login-submit">login</button>
+              <button type="button" class="login-submit" id="btn-login">
+                login
+              </button>
             </div>
             <div class="text">
               <span>Already have a account?</span>
@@ -241,7 +238,75 @@
         </div>
       </div>
     </div>
+
+    <div id="sigout-complete" class="user-complete">
+      <span>Are you sure want to sign out</span>
+      <div class="sigout-complete-btn">
+        <button class="btn" id="btn-yes">yes</button>
+        <button class="btn" id="btn-no">no</button>
+      </div>
+      <h3>Thanks you!</h3>
+    </div>
+
     <!-- =======LOGIN END===================== -->
+    <!-- =======cart start===================== -->
+    <div class="cart" id="cart">
+      <div class="head-cart">
+        <h2 class="title-cart">shopping cart</h2>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <!-- <div class="cart-item">
+          <div class="img-cart">
+            <img src="./img/pizza-food2.jpeg" />
+          </div>
+          <div class="cart-content">
+            <h3 class="name-cart">hawaiian pizza</h3>
+            <span class="size-cart">L</span>
+            <p class="choose-add">đế mỏng</p>
+            <p></p>
+          </div>
+          <div class="cart-price">
+            <span>160.000vnd</span>
+            <div class="number-cart">
+              <i class="bx bx-plus"></i>
+              <p>1</p>
+              <i class="bx bx-minus"></i>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="line"></div> -->
+        <!-- <div class="cart-item">
+          <div class="img-cart">
+            <img src="./img/pizza-food2.jpeg" />
+          </div>
+          <div class="cart-content">
+            <h3 class="name-cart">hawaiian pizza</h3>
+            <span class="size-cart">L</span>
+            <p class="choose-add">đế mỏng</p>
+            <p></p>
+          </div>
+          <div class="cart-price">
+            <span>160.000vnd</span>
+            <div class="number-cart">
+              <p>1</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <div class="footer-cart">
+        <div class="total">
+          <h3>total payment:</h3>
+          <span id="total"></span>
+        </div>
+        <div class="line"></div>
+        <div class="check-out">
+          <button class="btn" id="Continue">Continue to buy</button>
+          <button class="btn">check out</button>
+        </div>
+      </div>
+    </div>
+    <!-- =======cart END===================== -->
+
     <!-- =======BANNER MENU START===================== -->
     <section class="banner-menu">
       <div class="banner-menu-content">
@@ -280,19 +345,53 @@
           <img src="./img/drink_icon.png" />
           <p>beverages</p>
         </div>
-        <div class="item-menu">
-          <img src="./img/children-icon.png" />
-          <p>for babies</p>
-        </div>
       </div>
     </section>
 
-    <main id="menu-category">
-      <!-- =======fried chicken START===================== -->
-      <section class="chicken-menu" id="chicken-menu">
-        <h1>fried chicken</h1>
-        <div class="container-chicken" id="container-chicken">
-          <div class="chicken-items">
+    <!-- ============MENUS DETAIL  START=========== -->
+
+    <!-- PIZZA STARTS  -->
+    <section class="pizza-menu" id="pizza-menu">
+      <h1>pizza</h1>
+      <div class="container-pizza" id="container-pizza">
+        <!-- <div class="pizza-items">
+          <div class="pizza-item">
+            <div class="img-pizza">
+              <img src="./img/pizza-food5.jpeg" />
+            </div>
+            <div class="icon-heart">
+              <i class="bx bxs-heart"></i>
+            </div>
+            <div class="pizza-dish-name">
+              <a href="./menusdetail.html"><h3>Pizza Siêu Topping Xúc Xích Ý</h3></a>
+            </div>
+            <div class="pizza-text">
+              <p>
+                Xốt Cà Chua, Phô Mai Mozzarella, Xúc Xích Pepperoni. Tăng 50%...
+              </p>
+            </div>
+            <div class="price-pizza">
+              <div class="size">
+                <span for="price">M:</span>
+                <p class="priceM">160.00vnd</p>
+              </div>
+              <div class="size">
+                <span for="price">L:</span>
+                <p class="priceM">210.000vnd</p>
+              </div>
+            </div>
+            <button class="view-card-pizza btn">Add To Card</button>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- =======fried chicken START===================== -->
+
+    <section class="chicken-menu" id="chicken-menu">
+      <h1>fried chicken</h1>
+      <div class="container-chicken" id="container-chicken">
+        <!-- <div class="chicken-items">
             <div class="chicken-item">
               <div class="img-chicken">
                 <img src="./img/chicken-food.jpeg" />
@@ -301,7 +400,7 @@
                 <i class="bx bxs-heart"></i>
               </div>
               <div class="chicken-dish-name">
-                <h3>Gà rán karaage</h3>
+                <a><h3>Gà rán karaage</h3></a>
               </div>
               <div class="chicken-text">
                 <p>
@@ -312,121 +411,16 @@
               <button class="view-card btn">Add To Card</button>
               <span class="price-chicken">98.000Vnd</span>
             </div>
-          </div>
+           </div> -->
+      </div>
+    </section>
 
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food2.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Gà rán bơ sữa</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Gà rán bơ sữa chắc chắn sẽ thỏa mãn cơn thèm đồ ăn nhanh nhiều
-                  nước,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
+    <!-- =======SPAGHETTI START===================== -->
 
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food3.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Đùi gà chiên không dầu</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Món đùi gà ngọt và dính này có hương vị thơm ngon và cách làm
-                  đơn giản.,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food4.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Cánh gà chiên nếp</h3>
-              </div>
-              <div class="chicken-text">
-                <p>Cánh gà giòn, cay nhẹ rưới nước sốt ngọt và dính,...</p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food5.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Gà rán miền Nam và xà lách</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Để làm món gà rán miền Nam ngon nhất, hãy ướp đùi gà qua đêm
-                  trong bơ sữa,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food6.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Cánh gà bơ sữa, salsa ngô</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Cánh gà chiên hai lần sốt nóng là điểm nhấn trong món ăn ấn
-                  tượng ....
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- =======pizza START===================== -->
-      <!-- <section class="chicken-menu" id="chicken-menu">
-        <h1>pizza</h1>
-        <div class="container-chicken" id="container-chicken">
-          <div class="chicken-items">
+    <section class="chicken-menu" id="spaghetti-menu">
+      <h1>spaghetti</h1>
+      <div class="container-chicken" id="container-spaghetti">
+        <!-- <div class="chicken-items">
             <div class="chicken-item">
               <div class="img-chicken">
                 <img src="./img/chicken-food.jpeg" />
@@ -435,7 +429,7 @@
                 <i class="bx bxs-heart"></i>
               </div>
               <div class="chicken-dish-name">
-                <h3>Gà rán karaage</h3>
+                <a><h3>Gà rán karaage</h3></a>
               </div>
               <div class="chicken-text">
                 <p>
@@ -446,385 +440,39 @@
               <button class="view-card btn">Add To Card</button>
               <span class="price-chicken">98.000Vnd</span>
             </div>
-          </div>
+         </div> -->
+      </div>
+    </section>
 
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food2.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Gà rán bơ sữa</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Gà rán bơ sữa chắc chắn sẽ thỏa mãn cơn thèm đồ ăn nhanh nhiều
-                  nước,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
+    <!-- =======dinks start===================== -->
+    <section class="chicken-menu" id="chicken-menu">
+      <h1>drinks</h1>
+      <div class="container-chicken" id="container-drinks">
+        <!-- <div class="chicken-items">
+          <div class="chicken-item">
+            <div class="img-chicken">
+              <img src="./img/chicken-food.jpeg" />
             </div>
+            <div class="icon-heart">
+              <i class="bx bxs-heart"></i>
+            </div>
+            <div class="chicken-dish-name">
+              <h3>Gà rán karaage</h3>
+            </div>
+            <div class="chicken-text">
+              <p>
+                Gà rán Nhật Bản, hay còn gọi là gà karaage, rất phổ biến ở Nhật
+                Bản,...
+              </p>
+            </div>
+            <button class="view-card btn">Add To Card</button>
+            <span class="price-chicken">98.000Vnd</span>
           </div>
+        </div> -->
+      </div>
+    </section>
 
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food3.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Đùi gà chiên không dầu</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Món đùi gà ngọt và dính này có hương vị thơm ngon và cách làm
-                  đơn giản.,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food4.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Cánh gà chiên nếp</h3>
-              </div>
-              <div class="chicken-text">
-                <p>Cánh gà giòn, cay nhẹ rưới nước sốt ngọt và dính,...</p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food5.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Gà rán miền Nam và xà lách</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Để làm món gà rán miền Nam ngon nhất, hãy ướp đùi gà qua đêm
-                  trong bơ sữa,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food6.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Cánh gà bơ sữa, salsa ngô</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Cánh gà chiên hai lần sốt nóng là điểm nhấn trong món ăn ấn
-                  tượng ....
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- =======SPAGHETTI START===================== -->
-      <!-- <section class="chicken-menu" id="chicken-menu">
-        <h1>spaghetti</h1>
-        <div class="container-chicken" id="container-chicken">
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Gà rán karaage</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Gà rán Nhật Bản, hay còn gọi là gà karaage, rất phổ biến ở
-                  Nhật Bản,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">98.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food2.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Gà rán bơ sữa</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Gà rán bơ sữa chắc chắn sẽ thỏa mãn cơn thèm đồ ăn nhanh nhiều
-                  nước,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food3.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Đùi gà chiên không dầu</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Món đùi gà ngọt và dính này có hương vị thơm ngon và cách làm
-                  đơn giản.,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food4.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Cánh gà chiên nếp</h3>
-              </div>
-              <div class="chicken-text">
-                <p>Cánh gà giòn, cay nhẹ rưới nước sốt ngọt và dính,...</p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food5.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Gà rán miền Nam và xà lách</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Để làm món gà rán miền Nam ngon nhất, hãy ướp đùi gà qua đêm
-                  trong bơ sữa,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food6.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Cánh gà bơ sữa, salsa ngô</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Cánh gà chiên hai lần sốt nóng là điểm nhấn trong món ăn ấn
-                  tượng ....
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- =======dinks start===================== -->
-      <!-- <section class="chicken-menu" id="chicken-menu">
-        <h1>drinks</h1>
-        <div class="container-chicken" id="container-chicken">
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Gà rán karaage</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Gà rán Nhật Bản, hay còn gọi là gà karaage, rất phổ biến ở
-                  Nhật Bản,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">98.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food2.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Gà rán bơ sữa</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Gà rán bơ sữa chắc chắn sẽ thỏa mãn cơn thèm đồ ăn nhanh nhiều
-                  nước,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food3.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Đùi gà chiên không dầu</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Món đùi gà ngọt và dính này có hương vị thơm ngon và cách làm
-                  đơn giản.,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food4.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Cánh gà chiên nếp</h3>
-              </div>
-              <div class="chicken-text">
-                <p>Cánh gà giòn, cay nhẹ rưới nước sốt ngọt và dính,...</p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food5.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Gà rán miền Nam và xà lách</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Để làm món gà rán miền Nam ngon nhất, hãy ướp đùi gà qua đêm
-                  trong bơ sữa,...
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-
-          <div class="chicken-items">
-            <div class="chicken-item">
-              <div class="img-chicken">
-                <img src="./img/chicken-food6.jpeg" />
-              </div>
-              <div class="icon-heart">
-                <i class="bx bxs-heart"></i>
-              </div>
-              <div class="chicken-dish-name">
-                <h3>Cánh gà bơ sữa, salsa ngô</h3>
-              </div>
-              <div class="chicken-text">
-                <p>
-                  Cánh gà chiên hai lần sốt nóng là điểm nhấn trong món ăn ấn
-                  tượng ....
-                </p>
-              </div>
-              <button class="view-card btn">Add To Card</button>
-              <span class="price-chicken">99.000Vnd</span>
-            </div>
-          </div>
-        </div>
-      </section> -->
-    </main>
+    <!-- ============MENUS DETAIL  START=========== -->
 
     <!-- =======FOOTER START===================== -->
     <section class="contact-section" id="contact">
@@ -896,7 +544,7 @@
       </div>
     </section>
     <!-- =======FOOTER END===================== -->
-    <!-- ======= POPUP CHICKEN START===================== -->
+    <!-- ======= POPUP CHICKEN and drisk and spaghetti START===================== -->
     <div class="popup-chicken">
       <div class="login-box">
         <i class="bx bx-x" id="close-popup"></i>
@@ -918,7 +566,7 @@
         <div class="popup-chicken-img">
           <img src="./img/chicken-food.jpeg" />
         </div>
-        <span class="price">99.000Vnd</span>
+        <span class="price">100.000Vnd</span>
         <div class="button-number">
           <i class="bx bx-plus"></i>
           <p>1</p>
@@ -928,12 +576,101 @@
           <textarea rows="3" placeholder="ghi chu"></textarea>
         </div>
         <div class="chicken-btn">
-          <button class="btn">order now</button>
+          <a><button class="btn">order now</button></a>
         </div>
       </div>
     </div>
 
-    <!-- ======= POPUP CHICKEN END===================== -->
+    <!-- ======= POPUP pizza ===================== -->
+
+    <div class="popup-pizza">
+      <div class="logout-box">
+        <i class="bx bx-x" id="close-pizza"></i>
+      </div>
+      <div class="popup-pizza-detail">
+        <input type="hidden" id="cartId" />
+        <div class="head-title">
+          <h2>chọn sản phẩm</h2>
+        </div>
+        <div class="line"></div>
+        <div class="popup-box">
+          <div class="box-left">
+            <div class="pizza-name">
+              <a><h3>Pizza Siêu Topping Xúc Xích Ý</h3></a>
+            </div>
+            <div class="pizza-text-popup">
+              <p>
+                Gà rán Nhật Bản, hay còn gọi là gà karaage, rất phổ biến ở Nhật
+                Bản,...
+              </p>
+            </div>
+            <div class="popup-pizza-img">
+              <img src="./img/pizza-food1.jpeg" />
+            </div>
+            <span class="price-pizza-pop"></span>
+            <div class="button-number">
+              <input type="number" min="0" id="quantity" value="0" />
+            </div>
+          </div>
+          <div class="box-right">
+            <h3>Chọn kích thước:</h3>
+            <p>( Cỡ M: 6 miếng 22cm | Cỡ L: 8 miếng 30cm )</p>
+            <div class="choose-size">
+              <div class="size">
+                <label for="price">M:</label>
+                <p class="price-pizza-detailM"></p>
+                <input type="radio" name="radio1" value="3" />
+              </div>
+              <div class="size">
+                <label for="price">L:</label>
+                <p class="price-pizza-detailL"></p>
+                <input type="radio" name="radio1" value="4" />
+              </div>
+            </div>
+            <h3>Chọn đế</h3>
+            <div class="choose-size">
+              <div class="size">
+                <label for="price">Mỏng:</label>
+                <input type="radio" name="radio" value="Mỏng" id="sizeSmall" />
+              </div>
+              <div class="size">
+                <label for="price">Dày:</label>
+                <input type="radio" name="radio" value="Dày" id="sizeBig" />
+              </div>
+            </div>
+            <h3>Chọn Thêm</h3>
+            <div class="choose-size">
+              <div class="size">
+                <label for="price">Phomat:</label>
+                <p>30vnd</p>
+                <input type="checkbox" />
+              </div>
+              <div class="size">
+                <label for="price">Jambong:</label>
+                <p>30vnd</p>
+                <input type="checkbox" />
+              </div>
+              <div class="size">
+                <label for="price">Ngô:</label>
+                <p>30vnd</p>
+                <input type="checkbox" />
+              </div>
+            </div>
+
+            <div class="message">
+              <textarea rows="3" placeholder="ghi chu"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="pizza-btn">
+          <a
+            ><button class="btn order-now" id="order-now" onclick="addToCart()">
+              order now
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
 
     <!-- ==================LINK SWIPER======================== -->
 
@@ -942,7 +679,6 @@
     <!-- ==================LINK JAVASCRIPT======================== -->
     <script src="./user-js/menus.js"></script>
     <script src="./user-js/main.js"></script>
-    <script src="./user-js/regester.js"></script>
-    <script src="./user-js/login.js"></script>
+    <script src="./user-js/sigup.js"></script>
   </body>
 </html>

@@ -303,6 +303,7 @@ document.getElementById("btn-yes").addEventListener("click", () => {
   document.getElementById("list-login").style.display = "block";
   document.getElementById("account-user").classList.remove("open");
   document.getElementById("sigout-complete").style.right = "-100%";
+  nameLogin.innerHTML = "";
 });
 document.getElementById("btn-no").addEventListener("click", () => {
   checkLogin();

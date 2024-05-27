@@ -68,6 +68,20 @@ section:nth-child(even){
     font-size: 32px;
     text-transform: capitalize;
 }
+.btn {
+    display: inline-block;
+    font-size: 20px;
+    background-color: #141E46;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8px 18px;
+    color: #fff;
+    transition: all .3 ease;
+} 
+.btn:hover{
+    background-color: var(--green);
+    letter-spacing: 1.5px;  
+}
 /* =========== HEADER STAR================ */
 header{
     position: fixed;
@@ -152,7 +166,7 @@ header .icons .list-icons li a i:hover{
 header .nav-toggler span{
    display: none;
 }
-
+/* head span name-login  */
 #name-login span{
     display: block;
     height: 10px;
@@ -319,7 +333,7 @@ header .menus-down .menus-down-box ul li p{
     width: 400px;
     height: 240px;
     position: absolute;
-    top: 0;
+    top: 74px;
     right: -100%;
     background-color: var(--white);
     padding: 30px;
@@ -330,7 +344,7 @@ header .menus-down .menus-down-box ul li p{
     transition: right .5 ease;  
 }
 .sigout.open {
-    right: 0;
+    right: 140px;
 }
 .sigout p {
     font-size: 18px;
@@ -807,20 +821,7 @@ hr{
     font-size: 16px;
     line-height: 1.5;
 }
-.btn {
-    display: inline-block;
-    font-size: 20px;
-    background-color: #141E46;
-    border-radius: 6px;
-    cursor: pointer;
-    padding: 8px 18px;
-    color: #fff;
-    transition: all .3 ease;
-} 
-.btn:hover{
-    background-color: var(--green);
-    letter-spacing: 1.5px;  
-}
+
 .home .home-slider .slide .img{
     width: 50%;
 }
@@ -1030,10 +1031,13 @@ section.choose{
  .food-price{
      display: flex ;
      gap: 30px;
-     align-items: center;
+     align-items: center; 
+     justify-content: space-around;
+     margin-top: 20px;
  }
  .food-img{
     padding: 16px;
+    width: 380px;
  }
  .food-img img{
      width: 100%;
